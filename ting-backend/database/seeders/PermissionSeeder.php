@@ -32,6 +32,33 @@ class PermissionSeeder extends Seeder
         Permission::firstOrCreate([
             'name' => 'hotel.delete'
         ]);
-        
+
+        //
+        Permission::firstOrCreate([
+            'name' => 'user.view'
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'user.create'
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'user.update'
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'user.delete'
+        ]);
+        //
+
+        Permission::firstOrCreate([
+            'name' => 'booking.view'
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'booking.create'
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'booking.update'
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'booking.cancel'
+        ]);
     }
 }
