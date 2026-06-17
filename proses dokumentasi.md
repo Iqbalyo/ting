@@ -142,3 +142,14 @@ Controller
 Service
    ↓
 Response
+
+
+Setelah bikin AuthController,langusng import dependencies injection untuk AuthService
+
+Service Container
+        │
+        ▼
+new AuthService()
+        │
+        ▼
+Disuntikkan ke Controller
