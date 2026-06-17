@@ -72,3 +72,73 @@ Jadi sekarang
 
 dan juga 
 - User -> HasApiTokens (Sanctum) -> Authentication -> ibaratkany perannya nanya, 'siapa kamu?'
+
+Next LOGIN API
+Flow :
+saat user mengirimkan
+{
+    "email": "admin1@gmail.com",
+    "password": "12345678"
+}
+
+be akan melakukan
+- menerima request-> validasi input->cari user berdasarkan email->verifikasi pw->generate token sanctum-> return user + token
+
+Frontend
+    │
+    ▼
+POST /api/login
+    │
+    ▼
+Laravel
+    │
+    ├── cek email
+    ├── cek password
+    ├── create token
+    │
+    ▼
+Response
+
+kita menggunakan struktur
+validation->form request
+bisnis logic-> service layer
+
+biar ringan dan tidak berantakan dan fokus ke tugas masing2
+
+misal
+loginrequest -> validasi input seperti email dll
+
+AuthService -> proses login -> cari user berdasarkan email dll
+
+AuthController -> menerima request dll
+
+Next 
+ bikin LoginRequest karena,
+ Request masuk
+↓
+Validasi dulu
+↓
+Baru business logic
+
+kamudian tambahkan validasi email dan pw di LoginRequest
+
+Next bikin Service di folder
+app/Service/AuthService.php
+
+- Menggapa kita menggunakan service layer? 
+    1. biar ringan,jika banyak function,dan kita tidak tau kedepan apakah dia bertambah,tentu akan makin banyak baris yg dibuat dan hal itu kurang efektif dan efesien
+    2. Jadi service adalah tempat bisnis logic dan controller hanya melakukan panggilan dan mengembalikan hasilnya
+
+Jika sudah bikin file AuthService,ksongin aja dulu ,kita bikin AuthController dulu .Kenapa ? Karena kita lagi membangun aplikasi dari luar ke dalam.
+
+biar kita bisa lihat alurnya,jadi biar ngak2 lompat2
+alur yg dimaksud adlah
+Client
+   ↓
+Route
+   ↓
+Controller
+   ↓
+Service
+   ↓
+Response
