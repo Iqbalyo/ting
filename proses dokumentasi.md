@@ -153,3 +153,36 @@ new AuthService()
         │
         ▼
 Disuntikkan ke Controller
+
+mulai bikin bisnis logic di authservice,dimulai dari 
+
+dimulai dari login,Hash password serta response
+
+jadi flow nya
+User kirim email + password
+        ↓
+LoginRequest (validasi)
+        ↓
+AuthService
+        ↓
+Cari user
+        ↓
+Cek password (Hash::check)
+        ↓
+Generate token (Sanctum)
+        ↓
+Return user + token
+        ↓
+Frontend simpan token
+
+kenapa kita menuliskan 
+'user' => $user,
+'token' => $token,
+
+karena token untuk auth,jika hanya token front end ngak tau userny siapa,nama,roleny ngapain
+front end tau dari nama user dari mana?ya dari user,makany kita juga perlu bkin user
+
+lanjut route
+ingat route bukan hanya url,ia adalah endpoint,method,middleware,siapa saja yg boleh masuk dan controler mana yg di pangil
+
+dilogin kita tidak membtuhkan  auth:sanctum karena,kalo dikasih middleware auth santcum,nantinya,harus punyatoken,padahal token belum dibuat,gimana mau login?  

@@ -26,7 +26,7 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
-    protected function casts(): array
+    protected function casts(): array //ini adalah bawwaan dri laravel yg akan menyembunyikan field seperti password dan token,jadi nanti front end hanya menerima id,name,email,pw dan token tidka ikut
     {
         return [
             'email_verified_at' => 'datetime',

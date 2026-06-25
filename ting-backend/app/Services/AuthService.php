@@ -18,5 +18,19 @@ class AuthService
                 'email' => ['Email atau password salah']  //kenapa menggunakan array [],karena Laravel tetap menggunakan array agar formatnya konsisten.
             ]);
         }
+
+        if (! Hash::check($validated['password'], $user->password)) {
+            throw ValidationException::withMessages([
+                'email' => ['Email atau password salah.']
+            ]);
+        }
+
+        $token = $user->createToken('web')->plainTextToken;
+
+        return [
+            'user' => $user,
+            'token' => $token,
+            'token_type' => 'Bearer',
+        ];
     }
 }
