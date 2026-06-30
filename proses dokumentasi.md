@@ -186,3 +186,22 @@ lanjut route
 ingat route bukan hanya url,ia adalah endpoint,method,middleware,siapa saja yg boleh masuk dan controler mana yg di pangil
 
 dilogin kita tidak membtuhkan  auth:sanctum karena,kalo dikasih middleware auth santcum,nantinya,harus punyatoken,padahal token belum dibuat,gimana mau login?  
+
+update API dengan prefix
+
+phase 2 step 2
+testing login postman
+
+setelah berhasil test login di postman
+lanjut sanctum
+masuk ke midleware
+
+mudahnya middleware adalah security
+
+/logout juga membutuhkan sanctum agar laravel tau token siapa yg dipakai
+
+//endpoint bukann untuk mengelola user,tetapi untuk  mengetahui siapa usernya
+
+lanjut bkin function me di autcontroller
+
+kemudian bkin method me dan isi method ny 
