@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
 use App\Services\AuthService; // ini namanya **Dependencies Injection**
 
@@ -19,4 +20,14 @@ class AuthController extends Controller
         $validated = $request->validated();
         return $this->authService->login($validated);
     }
+
+    public function me(Request $request) 
+    {
+        $user = $request->user();
+        return [
+            'user' => $user,
+        ];
+    }
 }
+
+//penjelasan dan flow ny liat baris 24 itu artinya ambil user yg udh disiapkan sanctum
