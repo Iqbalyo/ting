@@ -28,6 +28,11 @@ class AuthController extends Controller
             'user' => $user,
         ];
     }
+
+    public function logout(Request $request)
+    {
+        return $this->authService->logout($request->user());
+    }
 }
 
 //penjelasan dan flow ny liat baris 24 itu artinya ambil user yg udh disiapkan sanctum

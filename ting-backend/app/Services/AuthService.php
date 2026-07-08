@@ -33,4 +33,12 @@ class AuthService
             'token_type' => 'Bearer',
         ];
     }
+
+    public function logout(User $user) {
+        $user->currentAccessToken()->delete();
+
+        return [
+            'message' => 'Logout berhasil',
+        ];
+    }
 }

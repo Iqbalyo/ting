@@ -205,3 +205,12 @@ mudahnya middleware adalah security
 lanjut bkin function me di autcontroller
 
 kemudian bkin method me dan isi method ny 
+jika sudah test di postmen dan coba login dan pastikan isi dulu bodynya
+
+dan kemudian bikin method lgogut di authservice dan di controller
+jika sudah,cek route list,pastika post api/auth/logout muncul,artinya berhasil next
+lengkapi autservice untuk logout
+
+berhasil test logout dan hasil postmen 401
+
+Lanjutkan ke model hotel
