@@ -221,3 +221,4 @@ lengkapi autservice untuk logout
 berhasil test logout dan hasil postmen 401
 
 Lanjutkan ke model hotel
+dan pastikan sudah panggil trait hasfactory
