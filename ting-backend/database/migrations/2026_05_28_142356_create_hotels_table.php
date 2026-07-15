@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('city');
             $table->text('address');
             $table->decimal('latitude', 10,7)->nullable();
-            $table->decimal('longtitude', 10,7)->nullable();
+            $table->decimal('longitude', 10,7)->nullable();
             $table->tinyInteger('star_rating')->default(0);
             $table->time('check_in_time')->nullable();
             $table->time('check_out_time')->nullable();
