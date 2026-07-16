@@ -26,7 +26,14 @@ class StoreHotelRequest extends FormRequest
             //
             'name' => 'required|string|max:225',
             'description' => 'required|string',
-            'city' => 'required|string|max:100'
+            'city' => 'required|string|max:100',
+            'address' => 'required|string', //cukup string karena di migration text
+            'latitude' => 'nullable|numeric|between:-90,90',
+            'longtitude' => 'nullable|numeric|between:-180,180',
+
+            'check_in_time' => 'nullable|date_format:H:i', //artinya H: jam, I:menit
+            'check_out_time' => 'nullable|date_format:H:i',
+
         ];
     }
 }
