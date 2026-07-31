@@ -8,7 +8,7 @@ use App\Http\Requests\StoreHotelRequest;
 
 class HotelController extends Controller
 {
-    //
+    //bikn constructor
     public function __construct(
         private HotelService $hotelservice
     ) {}
@@ -34,3 +34,5 @@ class HotelController extends Controller
 }
 
 //dari hotel service lanjut kesini
+
+//sip controller -> service sudah,langkah berikutny ke api.php

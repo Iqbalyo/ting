@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Hotel extends Model
 {
     use HasFactory;
+    //ngak semua kolom dari migration harus ditulis di fillable,karena selebihnya harus diatur dari sisi admin bukan user
 
     protected $fillable = [
 
@@ -16,6 +17,7 @@ class Hotel extends Model
         'owner_id',
         'name',
         'description',
+        'slug',
         'city',
         'address',
         'latitude',

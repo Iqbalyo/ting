@@ -1,0 +1,37 @@
+{
+    "email": "admin1@gmail.com",
+    "password": "12345678"
+}
+
+pastikan body ny json kemudian copy di bagain bearer di Authorization
+
+simpelnya
+Login
+□ POST /api/auth/login
+□ Copy Token
+□ Authorization Bearer
+□ Test /me
+□ Test /logout
+
+Hotel
+□ POST /api/auth/hotels
+□ Authorization Bearer
+□ Isi Body
+□ Klik Send
+
+nah disini pasti error,karena kita blum punya slug,dan ingat slug di atur oleh
+be / service jadi,karena be bertugas mngatur aturan bisnis
+sedangkan fe cukup fokus ngumpulin data
+jadi next ke hotelservice
+
+
+{
+    "name": "Hotel Ting Jakarta",
+    "description": "Hotel pertama Ting",
+    "city": "Jakarta",
+    "address": "Jl. Sudirman No. 1",
+    "latitude": -6.2088,
+    "longtitude": 106.8456,
+    "check_in_time": "14:00",
+    "check_out_time": "12:00"
+}

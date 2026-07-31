@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HotelController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -21,8 +22,14 @@ Route::prefix('auth')->group(function () {
         Route::get('me', [AuthController::class, 'me']);
 
         Route::post('logout', [AuthController::class, 'logout']);   //lanjutin routelogout
+
+        //setelah dari hotelcontroller next beikut
+        Route::post('hotels', [HotelController::class, 'store']);
+        //kenapa hotels? karena mengikuti model hotel ,jdi tambahkan s
     });
 });
+
+//next lanjut,test login postman
 
 
 //perhatikan baris 16,// dibwaha ini route,msak lu lupa terus route yg mana,kan ada tulisannya Route Buta lu?

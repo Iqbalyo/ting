@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Hotel;
 use App\Models\User;
+use Illuminate\Support\Str; // ini buat ngelola string,ini disebut helper
 
 class HotelService
 {
@@ -20,6 +21,10 @@ class HotelService
 
         $validated['owner_id'] = $user->id; //--> ambil id user yg login yg sudah divalidasi
         //next bikin hotelcontroler via terminal
+
+        //nah akhirnya kita nyampe disini,setelah dari file UntukApidanTestLogin,dan next import helper string yakni str,dan tulis sperti berikut
+
+        $validated['slug'] = Str::slug($validated['name']);
 
         $hotel = Hotel::create($validated);
         //simpan data yg sudah divalidasi ke tabel hotel
