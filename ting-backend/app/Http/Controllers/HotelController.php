@@ -10,7 +10,7 @@ class HotelController extends Controller
 {
     //bikn constructor
     public function __construct(
-        private HotelService $hotelservice
+        private HotelService $hotelService
     ) {}
 
     public function store(StoreHotelRequest $request) 
@@ -20,7 +20,7 @@ class HotelController extends Controller
         //ambil semua data yg lolos validasi
 
         //next panggil hotel service
-        $hotel = $this->hotelservice->store($request->user(), $validated);
+        $hotel = $this->hotelService->store($request->user(), $validated);
 
         //$request->user() = ambil user yg sedang login
         //user() bacany panggil method user
@@ -31,6 +31,18 @@ class HotelController extends Controller
      
         
     }
+
+    public function index(Request $request)
+    {
+        $hotels = $this->hotelService->index($request->user());
+
+        return response()->json([
+            'message' => 'Hotels retrieved successfully',
+            'data' => $hotels,
+        ]);
+    }
+    // waktu project disini di jam 9.11 7/31/26
+    //next ke hotelservice tambahkan method index
 }
 
 //dari hotel service lanjut kesini

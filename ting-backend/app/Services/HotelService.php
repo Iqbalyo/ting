@@ -34,4 +34,14 @@ class HotelService
         //jika ngak,maka bakalan null,padahl kan ini tujuan kita ingin mengirim hotel yg dibuat ke fe
 
     }
+
+    //selesai dari // waktu project disini di jam 9.11 7/31/26
+    public function index(User $user)
+    {
+        return $user->hotels()->get();
+    }
+
+    // hari selasa 8/4/26 11:23
+    //next coba endpoint get di postman untuk melihat apakah data hotel berhasil disimpan,yakni di url api/auth/hotels
+    //jika berhasil fitur read selesai skrg masuk ke fitur read detail,karena nanti hotel bisa dilihat detailny
 }

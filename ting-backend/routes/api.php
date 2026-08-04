@@ -26,6 +26,11 @@ Route::prefix('auth')->group(function () {
         //setelah dari hotelcontroller next beikut
         Route::post('hotels', [HotelController::class, 'store']);
         //kenapa hotels? karena mengikuti model hotel ,jdi tambahkan s
+
+
+        //7-31-26
+        //bikin route index buat nampilin daftar hotel
+        Route::get('hotels', [HotelController::class, 'index']);
     });
 });
 
