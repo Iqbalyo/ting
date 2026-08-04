@@ -31,6 +31,10 @@ Route::prefix('auth')->group(function () {
         //7-31-26
         //bikin route index buat nampilin daftar hotel
         Route::get('hotels', [HotelController::class, 'index']);
+
+        //next kesiin setelah dari flowpembuatan 8/4/26 dan hotelservice
+        Route::get('hotels/{hotel}', [HotelController::class, 'show']);
+
     });
 });
 
@@ -39,3 +43,6 @@ Route::prefix('auth')->group(function () {
 
 //perhatikan baris 16,// dibwaha ini route,msak lu lupa terus route yg mana,kan ada tulisannya Route Buta lu?
     //nah kan katanya login itu public?nah tulis disni bukan diluar prefix,walaupun public bukan artinya di tulis diluar egee
+
+//Route Model Binding
+//Jadi Route Model Binding membantu mencari data, tapi tidak otomatis memeriksa hak akses.

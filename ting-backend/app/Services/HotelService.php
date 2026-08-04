@@ -44,4 +44,23 @@ class HotelService
     // hari selasa 8/4/26 11:23
     //next coba endpoint get di postman untuk melihat apakah data hotel berhasil disimpan,yakni di url api/auth/hotels
     //jika berhasil fitur read selesai skrg masuk ke fitur read detail,karena nanti hotel bisa dilihat detailny
+
+    //8/4/26
+    //next kembali ke api.php 
+
+    //8/4/26 14:44 WIB
+
+    public function show(User $user, Hotel $hotel)
+    {
+        if ($user->id !== $hotel->owner_id)
+        {
+            abort(403, 'You are not authorized to access this hotel.');
+        }
+        return $hotel;
+
+        //kemudian coba test di postman,api auth hotels/{hotel}
+
+        //liat aja di datase idny
+
+    }
 }
