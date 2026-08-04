@@ -224,3 +224,16 @@ Lanjutkan ke model hotel
 dan pastikan sudah panggil trait hasfactory
 
 lanjut validasi di storehotelrequest
+
+dan bikin file hotelservice 
+kemudian bikin data hotel didalam method hotel
+jika sudah lanjut ke hotelcontroller
+
+ next lanjut ke api.php
+ lanjut test login di postman
+
+ next sudah berhasil test api postman store hotel
+ Lanjut ke file api.php
+ karena kita bakalan nambahin route buat read,agar bisa nampilin daftar hotel
+ 
+ setelah berhasil,test endpoitn/url auth hotels,jika berhasil muncul,next bikin route untuk detail hotel/ read detail hotel
