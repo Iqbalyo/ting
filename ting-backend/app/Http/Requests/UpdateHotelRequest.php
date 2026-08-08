@@ -5,14 +5,14 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreHotelRequest extends FormRequest
+class UpdateHotelRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function authorize(): bool //ini maksudny apakah request boleh dijalan oleh user ini
+    public function authorize(): bool
     {
-        return true;
+        return true; //karena user mau update data,beda sama store,kemudian fokus ke rules
     }
 
     /**
@@ -24,16 +24,19 @@ class StoreHotelRequest extends FormRequest
     {
         return [
             //
-            'name' => 'required|string|max:225',
-            'description' => 'required|string',
-            'city' => 'required|string|max:100',
-            'address' => 'required|string', //cukup string karena di migration text
+
+             'name' => 'sometimes|string|max:225',
+            'description' => 'sometimes|string',
+            'city' => 'sometimes|string|max:100',
+            'address' => 'sometimes|string', //cukup string karena di migration text
             'latitude' => 'nullable|numeric|between:-90,90',
             'longtitude' => 'nullable|numeric|between:-180,180', //longtitude diperbaiki nanti
 
             'check_in_time' => 'nullable|date_format:H:i', //artinya H: jam, I:menit
             'check_out_time' => 'nullable|date_format:H:i',
 
+            //next pergi ke update di controller
         ];
+
     }
 }

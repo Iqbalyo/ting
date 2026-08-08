@@ -35,6 +35,9 @@ Route::prefix('auth')->group(function () {
         //next kesiin setelah dari flowpembuatan 8/4/26 dan hotelservice
         Route::get('hotels/{hotel}', [HotelController::class, 'show']);
 
+        //next update hotel
+        Route::put('hotels/{hotel}', [HotelController::class, 'update']);
+
     });
 });
 

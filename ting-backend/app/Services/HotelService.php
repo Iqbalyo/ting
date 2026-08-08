@@ -63,4 +63,18 @@ class HotelService
         //liat aja di datase idny
 
     }
+
+    public function update(User $user, Hotel $hotel, array $data)
+    {
+        if ($user->id !== $hotel->owner_id)
+        {
+            abort(403, 'You are not authorized to access this hotel.');
+        }
+        if (isset($data['name'])) {
+            $data['slug'] = Str::slug($data['name']);
+        }
+        return $hotel;
+    }
+
+    
 }

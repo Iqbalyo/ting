@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\HotelService;
 use App\Http\Requests\StoreHotelRequest;
+use App\Http\Requests\UpdateHotelRequest;
 use App\Models\Hotel;
 
 class HotelController extends Controller
@@ -56,6 +57,27 @@ class HotelController extends Controller
 
         //next ke hotelservice buat method show
     }
+
+     public function update(UpdateHotelRequest $request, Hotel $hotel)
+
+     //kenapa kita panggil UpdateHotelRequest $request,karena kita udh bikin File
+     // Updatehotelrequest,dan udh kita setting isi yg diperlukan
+     //sehingga laravel memberikan kita hasil request yg sudah melewati validation,jdi tidka perlu melakukan validasi manual di controller
+     {
+        $this->hotelService->update(
+            $request->user(),
+            $hotel,
+            $request->validated()
+        );
+
+        return response()->json([
+            'message'=>'Hotel updated successfully',
+            'data' =>$hotel,
+        ]);
+
+        //next bikin updatedi hotelservice
+
+     }
     
 }
 
