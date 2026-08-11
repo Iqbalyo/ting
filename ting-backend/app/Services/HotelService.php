@@ -73,6 +73,8 @@ class HotelService
         if (isset($data['name'])) {
             $data['slug'] = Str::slug($data['name']);
         }
+
+        $hotel->update($data);
         return $hotel;
     }
 
