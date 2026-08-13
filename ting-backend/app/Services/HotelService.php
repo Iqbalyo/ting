@@ -64,8 +64,13 @@ class HotelService
 
     }
 
+
+
+    //kemudian dari controller bagian update,kesini 8/11/26 2.34
     public function update(User $user, Hotel $hotel, array $data)
     {
+     
+
         if ($user->id !== $hotel->owner_id)
         {
             abort(403, 'You are not authorized to access this hotel.');
@@ -76,6 +81,15 @@ class HotelService
 
         $hotel->update($data);
         return $hotel;
+    }
+
+    public function destroy(User $user, Hotel $hotel) 
+    {
+        if ( $user->id !== $hotel->owner_id)
+        {
+            abort(403, 'You are not authorized to acces this hotel');
+        }
+        $hotel->delete();
     }
 
     

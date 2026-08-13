@@ -64,6 +64,8 @@ class HotelController extends Controller
      // Updatehotelrequest,dan udh kita setting isi yg diperlukan
      //sehingga laravel memberikan kita hasil request yg sudah melewati validation,jdi tidka perlu melakukan validasi manual di controller
      {
+     
+
         $this->hotelService->update(
             $request->user(),
             $hotel,
@@ -75,9 +77,27 @@ class HotelController extends Controller
             'data' =>$hotel,
         ]);
 
+        //8/11/26 2.34
         //next bikin updatedi hotelservice
 
+
+        
+
      }
+
+     //lanjut dari fitur delete dari api
+        public function destroy(Request $request, Hotel $hotel)
+        {
+
+   
+            $this->hotelService->destroy($request->user(), $hotel);
+
+            return response()->json([
+                'message' => 'Hotel deleted succesfully'
+            ]);
+
+            //next pergi ke hotelservice,kita bkin method destroy
+        }
     
 }
 

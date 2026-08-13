@@ -37,6 +37,22 @@ Route::prefix('auth')->group(function () {
 
         //next update hotel
         Route::put('hotels/{hotel}', [HotelController::class, 'update']);
+         //next lanjut test update di postmen
+
+         //berikut prose/flow update
+        //1. Route::put('hotels/{hotel}', [Hotelcontroller::class, 'update']);
+        //gw mau bkin route baru,yakni put buat update/memperbarui data,dimana target lokasinya di'hotels/{hotel}' yg nanti diikutin oleh id hotel masing2,kemudian datany diolah dan dieksekusi oleh fungsi update di Hotelcontroller
+        //jika sudah bkin form request UpdatehotelRequest dg php artisan make
+        // step ke 2 pergi ke file updatehotelrequest yg udh di bikin sebelumnya,
+        // dan ubah authorize false,menjadi true karena,artinya user boleh update,
+        //kemudian masuk ke rules, copy dari storehotel,tinggal ubah,required menjadi,sometimes,yg artinya data boleh diubah atau boleh tidak diubah,dmna nanti akan tetap berhasil,
+        //step 3 ke hotelcontroller,buat method update, waktu pembuatan flow ini 8/11/26 2.34
+
+        //8-13-26 2:36
+        //fitur crud terakhir delete
+        Route::delete('hotels/{hotel}', [HotelController::class, 'destroy']);
+        //next pergi ke HotelController
+       
 
     });
 });
