@@ -21,7 +21,7 @@ class Hotel extends Model
         'city',
         'address',
         'latitude',
-        'longtitude', //tpi belom di fresh migrate
+        'longitude', //tpi belom di fresh migrate
         'check_in_time',
         'check_out_time',
     ];

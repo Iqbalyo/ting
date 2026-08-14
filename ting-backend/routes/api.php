@@ -52,6 +52,9 @@ Route::prefix('auth')->group(function () {
         //fitur crud terakhir delete
         Route::delete('hotels/{hotel}', [HotelController::class, 'destroy']);
         //next pergi ke HotelController
+
+        //8-14-26 10:47
+        //fitur crud selesai
        
 
     });

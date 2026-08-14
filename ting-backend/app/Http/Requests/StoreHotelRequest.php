@@ -29,7 +29,7 @@ class StoreHotelRequest extends FormRequest
             'city' => 'required|string|max:100',
             'address' => 'required|string', //cukup string karena di migration text
             'latitude' => 'nullable|numeric|between:-90,90',
-            'longtitude' => 'nullable|numeric|between:-180,180', //longtitude diperbaiki nanti
+            'longitude' => 'nullable|numeric|between:-180,180', //longitude diperbaiki nanti
 
             'check_in_time' => 'nullable|date_format:H:i', //artinya H: jam, I:menit
             'check_out_time' => 'nullable|date_format:H:i',
