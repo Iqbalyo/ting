@@ -3,8 +3,8 @@
 namespace App\Services;
 
 use App\Models\User;
-use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class AuthService
 {
@@ -15,13 +15,13 @@ class AuthService
 
         if (! $user) {
             throw ValidationException::withMessages([
-                'email' => ['Email atau password salah']  //kenapa menggunakan array [],karena Laravel tetap menggunakan array agar formatnya konsisten.
+                'email' => ['Email atau password salah'],  // kenapa menggunakan array [],karena Laravel tetap menggunakan array agar formatnya konsisten.
             ]);
         }
 
         if (! Hash::check($validated['password'], $user->password)) {
             throw ValidationException::withMessages([
-                'email' => ['Email atau password salah.']
+                'email' => ['Email atau password salah.'],
             ]);
         }
 
@@ -34,7 +34,8 @@ class AuthService
         ];
     }
 
-    public function logout(User $user) {
+    public function logout(User $user)
+    {
         $user->currentAccessToken()->delete();
 
         return [

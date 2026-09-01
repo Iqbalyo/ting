@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Hotel extends Model
 {
     use HasFactory;
-    //ngak semua kolom dari migration harus ditulis di fillable,karena selebihnya harus diatur dari sisi admin bukan user
+    // ngak semua kolom dari migration harus ditulis di fillable,karena selebihnya harus diatur dari sisi admin bukan user
 
     protected $fillable = [
 
@@ -21,13 +22,18 @@ class Hotel extends Model
         'city',
         'address',
         'latitude',
-        'longitude', //tpi belom di fresh migrate
+        'longitude', // tpi belom di fresh migrate
         'check_in_time',
         'check_out_time',
     ];
 
-    public function owner(): BelongsTo  //ini lebih baik,karena lebih jelas 
+    public function owner(): BelongsTo  // ini lebih baik,karena lebih jelas
     {
         return $this->belongsTo(User::class, 'owner_id');
+    }
+
+    public function rooms(): HasMany
+    {
+        return $this->hasMany(Room::class);
     }
 }

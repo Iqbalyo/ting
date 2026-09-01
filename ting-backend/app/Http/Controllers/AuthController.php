@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
-use App\Services\AuthService; // ini namanya **Dependencies Injection**
+use App\Services\AuthService;
+use Illuminate\Http\Request; // ini namanya **Dependencies Injection**
 
-//jadi tidak perlu bikin new AuthService(); karena bakalan urus oleh Laravel services container
+// jadi tidak perlu bikin new AuthService(); karena bakalan urus oleh Laravel services container
 
 class AuthController extends Controller
 {
@@ -18,12 +18,14 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         $validated = $request->validated();
+
         return $this->authService->login($validated);
     }
 
-    public function me(Request $request) 
+    public function me(Request $request)
     {
         $user = $request->user();
+
         return [
             'user' => $user,
         ];
@@ -35,4 +37,4 @@ class AuthController extends Controller
     }
 }
 
-//penjelasan dan flow ny liat baris 24 itu artinya ambil user yg udh disiapkan sanctum
+// penjelasan dan flow ny liat baris 24 itu artinya ambil user yg udh disiapkan sanctum

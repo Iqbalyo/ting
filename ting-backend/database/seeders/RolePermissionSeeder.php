@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 
@@ -28,8 +27,8 @@ class RolePermissionSeeder extends Seeder
 
             'booking.view',
             'booking.create',
-             'booking.update',
-             'booking.cancel',
+            'booking.update',
+            'booking.cancel',
         ]);
 
         $partnerRole = Role::findByName('partner');
@@ -37,8 +36,8 @@ class RolePermissionSeeder extends Seeder
             'hotel.view',
             'hotel.create',
             'hotel.update',
-            
-            'booking.view'
+
+            'booking.view',
         ]);
 
         $customerRole = Role::findByName('customer');

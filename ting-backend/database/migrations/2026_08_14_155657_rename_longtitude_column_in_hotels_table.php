@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::table('hotels', function (Blueprint $table) {
             //
-         //$table->renameColumn('from', 'to');
-         $table->renameColumn('longtitude', 'longitude');
+            // $table->renameColumn('from', 'to');
+            $table->renameColumn('longtitude', 'longitude');
         });
     }
 
@@ -25,7 +25,7 @@ return new class extends Migration
     {
         Schema::table('hotels', function (Blueprint $table) {
             //
-             $table->renameColumn('longtitude', 'longitude');
+            $table->renameColumn('longtitude', 'longitude');
         });
     }
 };

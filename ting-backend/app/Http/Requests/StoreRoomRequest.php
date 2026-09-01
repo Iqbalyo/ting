@@ -5,13 +5,12 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class LoginRequest extends FormRequest
+class StoreRoomRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
-    // apakah request ini dizinkan masuk ke proses validasi,jika iya true,jika tidak falsa
     {
         return true;
     }
@@ -25,8 +24,12 @@ class LoginRequest extends FormRequest
     {
         return [
             //
-            'email' => ['required', 'email'],
-            'password' => ['required'],
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'price' => 'required|numeric|min:0',
+            'capacity' => 'required|integer|min:1',
+            'status' => 'sometimes|string|in:available,unavailable', //karena di database kita sudah buat defauult,jadi clien tidak wajib mengirim status
+            
         ];
     }
 }

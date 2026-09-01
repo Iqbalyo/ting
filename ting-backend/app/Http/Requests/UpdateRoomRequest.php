@@ -5,13 +5,12 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class LoginRequest extends FormRequest
+class UpdateRoomRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
-    // apakah request ini dizinkan masuk ke proses validasi,jika iya true,jika tidak falsa
     {
         return true;
     }
@@ -25,8 +24,11 @@ class LoginRequest extends FormRequest
     {
         return [
             //
-            'email' => ['required', 'email'],
-            'password' => ['required'],
+            'name' => 'sometimes|string|max:255',
+        'description' => 'sometimes|string',
+        'price' => 'sometimes|numeric|min:0',
+        'capacity' => 'sometimes|integer|min:1',
+        'status' => 'sometimes|string|in:available,unavailable',
         ];
     }
 }

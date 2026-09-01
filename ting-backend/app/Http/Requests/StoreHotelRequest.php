@@ -10,7 +10,7 @@ class StoreHotelRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function authorize(): bool //ini maksudny apakah request boleh dijalan oleh user ini
+    public function authorize(): bool // ini maksudny apakah request boleh dijalan oleh user ini
     {
         return true;
     }
@@ -24,14 +24,14 @@ class StoreHotelRequest extends FormRequest
     {
         return [
             //
-            'name' => 'required|string|max:225',
+            'name' => 'required|string|max:255',
             'description' => 'required|string',
             'city' => 'required|string|max:100',
-            'address' => 'required|string', //cukup string karena di migration text
+            'address' => 'required|string', // cukup string karena di migration text
             'latitude' => 'nullable|numeric|between:-90,90',
-            'longitude' => 'nullable|numeric|between:-180,180', //longitude diperbaiki nanti
+            'longitude' => 'nullable|numeric|between:-180,180', // longitude diperbaiki nanti
 
-            'check_in_time' => 'nullable|date_format:H:i', //artinya H: jam, I:menit
+            'check_in_time' => 'nullable|date_format:H:i', // artinya H: jam, I:menit
             'check_out_time' => 'nullable|date_format:H:i',
 
         ];

@@ -19,12 +19,11 @@ return Application::configure(basePath: dirname(__DIR__))
         });
     })
 
-    //withMiddleware ITU adalah satpam atau ngasih aturan siapa aja yg boleh akses dan bagian redirectGuestsTo adalah 'kalo ada tamu/user yg belom login,arahkan kemana?biasany ke login tapi itu hanya cocok kalo project kita full blade,krena kita bikin REST API,jangan kemana2 dulu,cukup kasih respon 401 dlu,karena rest api harus pakek http status code 401
+    // withMiddleware ITU adalah satpam atau ngasih aturan siapa aja yg boleh akses dan bagian redirectGuestsTo adalah 'kalo ada tamu/user yg belom login,arahkan kemana?biasany ke login tapi itu hanya cocok kalo project kita full blade,krena kita bikin REST API,jangan kemana2 dulu,cukup kasih respon 401 dlu,karena rest api harus pakek http status code 401
 
-    //fundemental code
-    //withMiddleware() adalah fitur request buat nambah aturan ke apilkasi
-    //redirectGuesto adalah method untuk ngatur redirect ke tamu
-
+    // fundemental code
+    // withMiddleware() adalah fitur request buat nambah aturan ke apilkasi
+    // redirectGuesto adalah method untuk ngatur redirect ke tamu
 
     //
     ->withExceptions(function (Exceptions $exceptions): void {
