@@ -28,8 +28,8 @@ class StoreRoomRequest extends FormRequest
             'description' => 'required|string',
             'price' => 'required|numeric|min:0',
             'capacity' => 'required|integer|min:1',
-            'status' => 'sometimes|string|in:available,unavailable', //karena di database kita sudah buat defauult,jadi clien tidak wajib mengirim status
-            
+            'status' => 'sometimes|string|in:available,unavailable', // karena di database kita sudah buat defauult,jadi clien tidak wajib mengirim status
+
         ];
     }
 }

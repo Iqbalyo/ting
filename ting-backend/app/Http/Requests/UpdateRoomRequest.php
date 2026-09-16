@@ -25,10 +25,10 @@ class UpdateRoomRequest extends FormRequest
         return [
             //
             'name' => 'sometimes|string|max:255',
-        'description' => 'sometimes|string',
-        'price' => 'sometimes|numeric|min:0',
-        'capacity' => 'sometimes|integer|min:1',
-        'status' => 'sometimes|string|in:available,unavailable',
+            'description' => 'sometimes|string',
+            'price' => 'sometimes|numeric|min:0',
+            'capacity' => 'sometimes|integer|min:1',
+            'status' => 'sometimes|string|in:available,unavailable',
         ];
     }
 }
