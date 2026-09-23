@@ -11,14 +11,14 @@ class RoomService
     /**
      * Create a new class instance.
      */
-    public function __construct()
-    {
-        //
-    }
+    // public function __construct()
+    // {
+    //     //
+    // }
 
     public function store(User $user, Hotel $hotel, array $validated)
     {
-        if ($user !== $hotel->owner_id) {
+        if ($user->id !== $hotel->owner_id) {
             abort(403, 'You are not authorized to manage this hotel');
         }
 

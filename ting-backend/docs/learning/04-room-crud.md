@@ -20,9 +20,9 @@ Relationship:
 
 User → Hotel → Room
 
-* User memiliki banyak Hotel.
-* Hotel memiliki banyak Room.
-* Room dimiliki oleh satu Hotel.
+- User memiliki banyak Hotel.
+- Hotel memiliki banyak Room.
+- Room dimiliki oleh satu Hotel.
 
 ## 3. Database Structure
 
@@ -143,3 +143,9 @@ Hotel
 Room
  └── belongsTo(Hotel)
 ```
+
+# NOTE :
+
+php vendor/bin/pint
+berfungsi untuk code formatter laravel,merapikan tulis otomatis
+ini lebih berguna buat backend,ketimbang pretier karena pretier fokus di front end

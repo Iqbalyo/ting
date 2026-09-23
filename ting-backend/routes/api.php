@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HotelController;
+use App\Http\Controllers\RoomController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +52,10 @@ Route::prefix('auth')->group(function () {
 
         // 8-14-26 10:47
         // fitur crud selesai
+
+        //RoomService
+        //post : membuat data
+        Route::post('/hotels/{hotel}/rooms', [RoomController::class, 'store']);
 
     });
 });
