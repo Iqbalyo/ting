@@ -10,6 +10,10 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
+//Prefix → menentukan bentuk URL.
+
+//Middleware → menentukan siapa yang boleh mengakses.
+
 Route::prefix('auth')->group(function () {
 
     Route::post('login', [AuthController::class, 'login']);
@@ -53,12 +57,20 @@ Route::prefix('auth')->group(function () {
         // 8-14-26 10:47
         // fitur crud selesai
 
-        //RoomService
-        //post : membuat data
-        Route::post('/hotels/{hotel}/rooms', [RoomController::class, 'store']);
+
 
     });
 });
+//error tgl 10/2/26 disini auth.sanctum, harusnya titik dua
+//Kenapa Formatnya Begitu?
+//Sistem penulisan middleware Laravel memang menggunakan format
+// nama_middlewarenya : parameter
+Route::middleware('auth:sanctum')->group(function () {
+    //RoomService
+    //post : membuat data
+    Route::post('/hotels/{hotel}/rooms', [RoomController::class, 'store']);
+    Route::get('/hotels/{hotel}/rooms', [RoomController::class, 'index']);
+});bB
 
 // next lanjut,test login postman
 

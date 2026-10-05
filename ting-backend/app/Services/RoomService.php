@@ -26,4 +26,9 @@ class RoomService
 
         return Room::create($validated);
     }
+
+    public function index(Hotel $hotel) 
+    {
+        return $hotel->rooms()->get();
+    }
 }

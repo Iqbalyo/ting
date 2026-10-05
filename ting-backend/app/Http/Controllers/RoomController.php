@@ -30,4 +30,13 @@ class RoomController extends Controller
             'data' => $room,
         ], 201);
     }
+
+    public function index(Hotel $hotel): JsonResponse
+    {
+        $rooms = $this->roomService->index($hotel);
+        return response()->json([
+            'message' => "Rooms retrieved successfully",
+            'data' => $rooms,
+        ], 200);
+    }
 }
